@@ -1,0 +1,48 @@
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:700,600' rel='stylesheet' type='text/css'>
+
+<h1>To Do List</h1>
+
+<h2>
+{{ error }}
+<h2>
+
+<table border='1'>
+
+
+{% for task in my_list %}
+  <tr>
+      {% for info in task %}
+        <td>
+        {{ info }}
+        </td>
+      {% endfor %}
+  </tr>
+{% endfor %}
+</table>
+
+<br>
+
+<form method="post" action="/submit">
+<div class="box">
+<input type="email" name="email" value="enter your email"/>
+<input type="=task" name="task" value="enter your task"/>
+
+<select name="priority">
+  <option value="low">Low</option>
+  <option value="medium">Medium</option>
+  <option value="high">High</option>
+</select>
+
+<button name="mysubmitbutton" id="mysubmitbutton" type="submit" class="btn">
+   Submit
+   </button>
+</div>
+
+</form>
+
+<form method='post' action='/clear'>
+  <input type="hidden" name="nothing" value="idk" />
+  <button name='clear' id='clear' type='submit' class='btn'>
+    Clear
+  </button>
+</form>
